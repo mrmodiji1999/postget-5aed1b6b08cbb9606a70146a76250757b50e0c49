@@ -13,7 +13,9 @@ class PostsRepo {
       final dynamic responseData = await postsService.fetchPosts();
 
       if (responseData is List) {
-        return responseData.map((data) => PostDataUiModel.fromJson(data)).toList();
+        return responseData
+            .map((data) => PostDataUiModel.fromJson(data))
+            .toList();
       } else if (responseData is Map<String, dynamic>) {
         return [PostDataUiModel.fromJson(responseData)];
       } else {

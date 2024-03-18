@@ -10,4 +10,6 @@ abstract class PostsService {
 
   @GET("/carts")
   Future<dynamic> fetchPosts();
+    @POST("/products")
+  Future<dynamic> addPost(@Body() Map<String, dynamic> postData);
 }
